@@ -1,0 +1,46 @@
+
+.container {
+    height: 100%;
+    width: 100%;
+    background-color: #3f3f3f;
+    overflow: scroll;
+}
+
+.header {
+    max-height: 8vh;
+}
+
+.content {
+
+}
+
+.poem-content {
+    overflow: scroll;
+    max-height: 30vh;
+}
+
+.poem-card {
+    max-height: 45vh;
+    min-height: 20vh;
+    overflow: hidden;
+}
+
+.saved-card {
+}
+
+.saved-list-item {
+}
+
+.saved-list-item-heading {
+    float: left;
+}
+
+.saved-list-item-buttons {
+    float: right;
+}
+
+.selection-list {
+    overflow: scroll;
+    max-height: 34vh;
+    min-height: 34vh;
+}

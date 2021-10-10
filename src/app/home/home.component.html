@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="header">
+        <mat-toolbar>
+            <span>Prise App</span>
+        </mat-toolbar>
+    </div>
+    <div class="content">
+        <div class="poem">
+            <mat-card class="poem-card">
+                <mat-card-subtitle>Prisespruch</mat-card-subtitle>
+                <mat-card-title>{{ this.model.heading }}</mat-card-title>
+                <mat-card-content [innerHtml]="this.model.value"></mat-card-content>
+                <mat-divider inset></mat-divider>
+                <mat-card-actions>
+                    <button *ngIf="!poemFavored" mat-raised-button color="primary"
+                        (click)="favorPoem()">Speichern</button>
+                    <button *ngIf="poemFavored" mat-raised-button color="warn"
+                        (click)="unfavorPoem()">Löschen</button>
+                    <button mat-raised-button color="accent" (click)="loadNextPoem()">Nächster Spruch</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+        <div class="saved">
+            <mat-card class="saved-card">
+                <mat-card-title>Gespeicherte Sprüche</mat-card-title>
+                <div *ngIf="poems.length > 0">
+                    <mat-card-content>
+                        <mat-selection-list class="selection-list" #poemlist [multiple]="false">
+                            <mat-list-option *ngFor="let poem of poems" (click)="loadPoem(poem.index)">
+                                {{poem.heading}}
+                            </mat-list-option>
+                        </mat-selection-list>
+                    </mat-card-content>
+                </div>
+                <div *ngIf="poems.length === 0">
+                    <mat-card-content>
+                        <p>Hier werden deine gespeicherten Sprüche angezeigt...</p>
+                    </mat-card-content>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
