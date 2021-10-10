@@ -24,7 +24,7 @@ export class PoemService {
   }
 
   private handelErrors(error: any) {
-    if(error.status === 0)
+    if(error.status === 0 || error.status === 504)
       return of({heading: 'Ein Fehler is passiert D:', value: 'Ein Netzwerkfehler ist aufgetreten, probier es später nochmal...'});
     return of({heading: 'Ein Fehler is passiert D:', value: JSON.stringify({status: error.status, message: error.statusText})});
   }
