@@ -15,8 +15,8 @@ export class HomeComponent implements OnInit {
 
   model: Poem = {
     index: -1,
-    heading: 'undefined',
-    value: 'undefined'
+    heading: 'Laden...',
+    value: ''
   };
 
   poemFavored: boolean = false;
